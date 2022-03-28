@@ -1,13 +1,33 @@
 app-login {
-    .login-form-margin {
-        margin-bottom: 16px;
-    }
+    .content {
+        @apply flex
+            justify-center
+            items-center
+            h-screen;
 
-    .login-form-forgot {
-        float: right;
-    }
+        &__container {
+            @apply w-full max-w-xs;
 
-    .login-form-button {
-        width: 100%;
+            &__title {
+                @apply text-5xl
+                    font-bold
+                    text-center
+                    mb-8;
+            }
+
+            &__form {
+                &__margin {
+                    @apply mb-6;
+                }
+
+                &__forgot {
+                    @apply float-right;
+                }
+
+                &__button {
+                    @apply w-full;
+                }
+            }
+        }
     }
 }

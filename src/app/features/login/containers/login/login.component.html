@@ -1,14 +1,14 @@
-<section class="flex justify-center items-center h-screen">
-    <div class="w-full max-w-xs">
-        <h1 class="prose lg:prose-xl font-bold mb-4">
+<section class="content">
+    <div class="content__container">
+        <h1 class="content__container__title">
             Log in
         </h1>
 
         <form
             nz-form
-            [formGroup]="validateForm"
-            class="login-form"
-            (ngSubmit)="submitForm()"
+            class="content__container__form"
+            [formGroup]="loginForm"
+            (ngSubmit)="submitLoginForm()"
         >
             <nz-form-item>
                 <nz-form-control nzErrorTip="Please input your username!">
@@ -24,7 +24,7 @@
             </nz-form-item>
 
             <nz-form-item>
-                <nz-form-control nzErrorTip="Please input your Password!">
+                <nz-form-control nzErrorTip="Please input your password!">
                     <nz-input-group nzPrefixIcon="lock">
                         <input
                             type="password"
@@ -36,20 +36,21 @@
                 </nz-form-control>
             </nz-form-item>
 
-            <div nz-row class="login-form-margin">
+            <div nz-row class="content__container__form__margin">
                 <div nz-col [nzSpan]="12">
                     <label nz-checkbox formControlName="remember">
                         <span>Remember me</span>
                     </label>
                 </div>
+
                 <div nz-col [nzSpan]="12">
-                    <a class="login-form-forgot">Forgot password</a>
+                    <a class="content__container__form__forgot">Forgot password</a>
                 </div>
             </div>
 
             <button
                 nz-button
-                class="login-form-button login-form-margin"
+                class="content__container__form__button content__container__form__margin"
                 [nzType]="'primary'"
             >
                 Log in
