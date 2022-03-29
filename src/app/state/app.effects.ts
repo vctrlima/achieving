@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, map, mergeMap, of } from "rxjs";
-import { LoginService } from "../services/login.service";
-import { User } from "../shared/models/user.model";
+import { LoginService } from "@services/login.service";
+import { User } from "@models/user.model";
 
 import * as fromAppActions from './app.actions';
 

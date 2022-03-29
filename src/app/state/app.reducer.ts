@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from "@ngrx/store";
-import { User } from "../shared/models/user.model";
+import { User } from "@models/user.model";
 
 import * as fromAppActions from './app.actions';
 

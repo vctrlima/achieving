@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/state/app.reducer';
 
-import * as fromAppActions from '../../../../state/app.actions'
+import * as fromAppActions from '@state/app.actions'
 
 @Component({
     selector: 'app-login',
