@@ -17,7 +17,10 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
+import { AppEffects } from './state/app.effects';
+
 import { LoginModule } from './features/login/login.module';
+import { reducer } from './state/app.reducer';
 
 registerLocaleData(pt);
 
@@ -34,9 +37,9 @@ registerLocaleData(pt);
 
         LoginModule,
 
-        StoreModule.forRoot({}, {}),
+        StoreModule.forRoot({ userContext: reducer }),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-        EffectsModule.forRoot([]),
+        EffectsModule.forRoot([AppEffects]),
         StoreRouterConnectingModule.forRoot(),
     ],
     providers: [{ provide: NZ_I18N, useValue: pt_BR }],
