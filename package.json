@@ -1,6 +1,6 @@
 {
-    "name": "state-ngrx",
-    "version": "0.0.0",
+    "name": "achieving-web",
+    "version": "0.0.08",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",

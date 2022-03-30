@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from '@services/login.service';
 
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
@@ -23,7 +24,10 @@ import { LoginRoutingModule } from './login.routing';
         NzCheckboxModule,
         NzFormModule,
         NzInputModule,
-    ]
+    ],
+    providers: [
+        LoginService
+    ],
 })
 
 export class LoginModule { }

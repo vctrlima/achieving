@@ -6,7 +6,7 @@ import { AppState } from 'src/app/state/app.reducer';
 import * as fromAppActions from '@state/app.actions'
 
 @Component({
-    selector: 'app-login',
+    selector: 'ang-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
     encapsulation: ViewEncapsulation.None,
