@@ -6,23 +6,27 @@ import { LoginService } from '@services/login.service';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 
 import { LoginComponent } from './containers/login/login.component';
-import { LoginRoutingModule } from './login.routing';
+import { AuthenticationRoutingModule } from './authentication.routing';
+import { SignupComponent } from './containers/signup/signup.component';
 
 @NgModule({
     declarations: [
-        LoginComponent
+        LoginComponent,
+        SignupComponent
     ],
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        LoginRoutingModule,
+        AuthenticationRoutingModule,
 
         NzButtonModule,
         NzCheckboxModule,
         NzFormModule,
+        NzIconModule,
         NzInputModule,
     ],
     providers: [
@@ -30,4 +34,4 @@ import { LoginRoutingModule } from './login.routing';
     ],
 })
 
-export class LoginModule { }
+export class AuthenticationModule { }

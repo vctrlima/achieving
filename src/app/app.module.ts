@@ -19,7 +19,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import { AppEffects } from './state/app.effects';
 
-import { LoginModule } from './features/login/login.module';
+import { AuthenticationModule } from './features/authentication/authentication.module';
 import { reducer } from './state/app.reducer';
 
 registerLocaleData(pt);
@@ -35,7 +35,7 @@ registerLocaleData(pt);
         HttpClientModule,
         BrowserAnimationsModule,
 
-        LoginModule,
+        AuthenticationModule,
 
         StoreModule.forRoot({ userContext: reducer }),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
