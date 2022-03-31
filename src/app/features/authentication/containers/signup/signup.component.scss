@@ -1,13 +1,15 @@
 ang-signup {
-    header {
+    .content {
+        @apply relative;
+
         ang-back-button {
             .back-button {
-                @apply m-6;
+                @apply absolute
+                    left-6
+                    top-6;
             }
         }
-    }
 
-    .content {
         @apply flex
             justify-center
             items-center
