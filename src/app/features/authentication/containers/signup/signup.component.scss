@@ -1,4 +1,12 @@
 ang-signup {
+    header {
+        ang-back-button {
+            .back-button {
+                @apply m-6;
+            }
+        }
+    }
+
     .content {
         @apply flex
             justify-center

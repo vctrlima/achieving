@@ -1,0 +1,23 @@
+ang-back-button {
+    .back-button {
+        @apply border
+            border-gray-tundora
+            rounded-md
+            flex
+            items-center
+            justify-center
+            h-10
+            w-10
+            transition-all
+            duration-300
+            ease-in-out;
+
+        &:hover {
+            @apply text-primary border-primary;
+        }
+
+        &:focus {
+            @apply text-primary border-primary shadow-focus;
+        }
+    }
+}

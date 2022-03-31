@@ -9,6 +9,8 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 
+import { SharedModule } from '@shared/shared.module';
+
 import { LoginComponent } from './containers/login/login.component';
 import { AuthenticationRoutingModule } from './authentication.routing';
 import { SignupComponent } from './containers/signup/signup.component';
@@ -22,6 +24,8 @@ import { SignupComponent } from './containers/signup/signup.component';
         CommonModule,
         ReactiveFormsModule,
         AuthenticationRoutingModule,
+
+        SharedModule,
 
         NzButtonModule,
         NzCheckboxModule,
