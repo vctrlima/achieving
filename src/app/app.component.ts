@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
+import { fadeAnimation } from '@shared/animations/fade';
 
 @Component({
     selector: 'ang-root',
-    template: '<router-outlet></router-outlet>',
-    styleUrls: ['./app.component.scss']
+    template: `
+        <main [@fadeAnimation]="getRouterOutletState(routerOutlet)">
+            <router-outlet #routerOutlet="outlet"></router-outlet>
+        </main>
+    `,
+    styleUrls: ['./app.component.scss'],
+    animations: [fadeAnimation]
 })
 export class AppComponent {
-    title = 'achieving';
+    public getRouterOutletState(routerOutlet: any) {
+        return routerOutlet.isActivated ? routerOutlet.activatedRoute : '';
+    }
 }

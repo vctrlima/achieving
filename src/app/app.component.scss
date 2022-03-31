@@ -1,0 +1,17 @@
+:host {
+    @apply flex
+        overflow-hidden
+        h-screen;
+
+    main {
+        @apply relative;
+    }
+
+    ::ng-deep router-outlet ~ * {
+        @apply absolute
+            h-full;
+
+        min-width: 100vw;
+        height: 100%;
+    }
+}
