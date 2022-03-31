@@ -2,5 +2,9 @@
 @use "tailwindcss/components";
 @use "tailwindcss/utilities";
 
-@use "./styles/scss/base/reset.scss";
-@use "./styles/scss/base/import.scss";
+@use "./styles/base/reset.scss";
+@use "./styles/base/import.scss";
+
+@use "./styles/ng-zorro-components/ant-btn.scss";
+@use "./styles/ng-zorro-components/ant-checkbox.scss";
+@use "./styles/ng-zorro-components/ant-input.scss";
