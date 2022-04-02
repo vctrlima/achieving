@@ -1,3 +1,5 @@
+$default-transition-properties: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
 ang-login {
     .content {
         @apply flex
@@ -26,6 +28,34 @@ ang-login {
 
                 &__button {
                     @apply w-full;
+
+                    &__google {
+                        @apply h-11
+                            border-2
+                            border-gray-tundora
+                            rounded-md
+                            block
+                            w-full
+                            hover:border-primary
+                            focus:shadow-focus;
+
+                        transition: $default-transition-properties;
+                    }
+
+                    &__strong {
+                        @apply font-semibold;
+                    }
+                }
+            }
+
+            &__footer {
+                @apply mt-8;
+
+                &__link {
+                    @apply text-primary
+                        hover:opacity-75;
+
+                    transition: $default-transition-properties;
                 }
             }
         }

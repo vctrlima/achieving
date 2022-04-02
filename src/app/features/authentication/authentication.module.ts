@@ -5,6 +5,7 @@ import { LoginService } from '@services/login.service';
 
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -29,6 +30,7 @@ import { SignupComponent } from './containers/signup/signup.component';
 
         NzButtonModule,
         NzCheckboxModule,
+        NzDividerModule,
         NzFormModule,
         NzIconModule,
         NzInputModule,

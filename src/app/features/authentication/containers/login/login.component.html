@@ -1,7 +1,7 @@
 <section class="content">
     <div class="content__container">
         <h1 class="content__container__title">
-            Log in
+            Login
         </h1>
 
         <form
@@ -53,12 +53,29 @@
                 class="content__container__form__button content__container__form__margin"
                 [nzType]="'primary'"
             >
-                Log in
+                Sign in
             </button>
 
-            Or
+            <nz-divider nzText="Or continue with"></nz-divider>
 
-            <a [routerLink]="['/auth/signup']">register now!</a>
+            <button
+                #loginWithGoogleBtn
+                type="button"
+                class="content__container__form__button__google content__container__form__margin"
+            >
+                Sign in with <strong class="content__container__form__button__strong">Google</strong>
+            </button>
         </form>
+
+        <footer class="content__container__footer">
+            Don't have an account?
+
+            <a
+                [routerLink]="['/auth/signup']"
+                class="content__container__footer__link"
+            >
+                Sign up now!
+            </a>
+        </footer>
     </div>
 </section>
