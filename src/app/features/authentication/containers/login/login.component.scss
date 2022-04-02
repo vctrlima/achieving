@@ -23,7 +23,8 @@ ang-login {
                 }
 
                 &__forgot {
-                    @apply float-right;
+                    @apply float-right
+                        text-primary;
                 }
 
                 &__button {
@@ -36,10 +37,17 @@ ang-login {
                             rounded-md
                             block
                             w-full
+                            relative
                             hover:border-primary
                             focus:shadow-focus;
 
                         transition: $default-transition-properties;
+
+                        &__icon {
+                            @apply absolute
+                                left-16
+                                top-[13px];
+                        }
                     }
 
                     &__strong {
@@ -49,10 +57,12 @@ ang-login {
             }
 
             &__footer {
-                @apply mt-8;
+                @apply mt-12
+                    text-center;
 
                 &__link {
                     @apply text-primary
+                        font-semibold
                         hover:opacity-75;
 
                     transition: $default-transition-properties;

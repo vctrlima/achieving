@@ -1,5 +1,6 @@
 .ant-checkbox {
     &-inner {
-        @apply rounded;
+        @apply rounded
+            border-2;
     }
 }
