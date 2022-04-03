@@ -20,7 +20,7 @@
                 }
             },
             "options": {
-                "cwd": "${workspaceFolder}/frontend",
+                "cwd": "${workspaceFolder}/app",
             }
         },
         {
@@ -41,7 +41,7 @@
                 }
             },
             "options": {
-                "cwd": "${workspaceFolder}/frontend"
+                "cwd": "${workspaceFolder}/app"
             }
         }
     ]
