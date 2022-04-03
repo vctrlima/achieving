@@ -1,0 +1,9 @@
+{
+    "name": "achieving-backend",
+    "version": "0.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "dependencies": {
+        "graphql-yoga": "^2.0.0"
+    }
+}
