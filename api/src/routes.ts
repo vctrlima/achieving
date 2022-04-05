@@ -11,13 +11,18 @@ export const Routes = [{
     controller: UserController,
     action: "getById"
 }, {
-    method: "post",
-    route: "/users",
-    controller: UserController,
-    action: "insert"
-}, {
     method: "delete",
     route: "/users/:id",
     controller: UserController,
     action: "remove"
+}, {
+    method: "post",
+    route: "/users/sign-up",
+    controller: UserController,
+    action: "signUp"
+}, {
+    method: "post",
+    route: "/users/sign-in",
+    controller: UserController,
+    action: "signIn"
 }]
