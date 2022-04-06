@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
         this.googleAuthenticationSdk();
 
         this.loginForm = this.formBuilder.group({
-            username: [null, [Validators.required]],
+            usernameOrEmail: [null, [Validators.required]],
             password: [null, [Validators.required]],
             remember: [true]
         });
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
         console.log('submitLoginForm');
 
         this.store.dispatch(fromAppActions.doLogin({
-            username: this.loginForm.value.username,
+            usernameOrEmail: this.loginForm.value.usernameOrEmail,
             password: this.loginForm.value.password,
         }));
     }

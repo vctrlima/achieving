@@ -33,9 +33,9 @@ export class SignupComponent implements OnInit {
     public submitLoginForm(): void {
         console.log('submitLoginForm');
 
-        this.store.dispatch(fromAppActions.doLogin({
-            username: this.signupForm.value.username,
-            password: this.signupForm.value.password,
-        }));
+        // this.store.dispatch(fromAppActions.doLogin({
+        //     usernameOrEmail: this.signupForm.value.username,
+        //     password: this.signupForm.value.password,
+        // }));
     }
 }

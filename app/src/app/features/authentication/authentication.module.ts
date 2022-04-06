@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginService } from '@services/login.service';
 
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
@@ -15,6 +14,8 @@ import { SharedModule } from '@shared/shared.module';
 import { LoginComponent } from './containers/login/login.component';
 import { AuthenticationRoutingModule } from './authentication.routing';
 import { SignupComponent } from './containers/signup/signup.component';
+
+import { UserService } from '@services/user.service';
 
 @NgModule({
     declarations: [
@@ -36,7 +37,7 @@ import { SignupComponent } from './containers/signup/signup.component';
         NzInputModule,
     ],
     providers: [
-        LoginService
+        UserService,
     ],
 })
 

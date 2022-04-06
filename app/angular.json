@@ -76,6 +76,9 @@
                 },
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "proxyConfig": "proxy.conf.json"
+                    },
                     "configurations": {
                         "production": {
                             "browserTarget": "state-ngrx:build:production"
@@ -109,9 +112,21 @@
                         ],
                         "scripts": []
                     }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "src/**/*.ts",
+                            "src/**/*.html"
+                        ]
+                    }
                 }
             }
         }
     },
-    "defaultProject": "state-ngrx"
+    "defaultProject": "state-ngrx",
+    "cli": {
+        "defaultCollection": "@angular-eslint/schematics"
+    }
 }

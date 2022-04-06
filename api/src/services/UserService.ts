@@ -1,5 +1,6 @@
 import { compare, hash } from "bcryptjs";
 import { sign } from "jsonwebtoken";
+import { AuthenticatedUser } from "../interface/AuthenticatedUser";
 import { SignInRequest } from "../interface/SignInRequest";
 import { SignUpRequest } from "../interface/SignUpRequest";
 import { UserRepository } from "../repository/UserRepository";
@@ -7,7 +8,7 @@ import { UserRepository } from "../repository/UserRepository";
 export class UserService {
     private userRepository = UserRepository;
 
-    public async signUp({ username, email, password }: SignUpRequest) {
+    public async signUp({ username, email, password }: SignUpRequest): Promise<AuthenticatedUser> {
         if (!username)
             throw new Error("Username incorrect");
 
@@ -24,10 +25,10 @@ export class UserService {
         const hashedPassword = await hash(password, 8);
         const user = await this.userRepository.save({ username, email, password: hashedPassword });
 
-        return user;
+        return this.signIn({ usernameOrEmail: username, password });
     }
 
-    public async signIn({ usernameOrEmail, password }: SignInRequest) {
+    public async signIn({ usernameOrEmail, password }: SignInRequest): Promise<AuthenticatedUser> {
         const user = await this.userRepository.findOne({ where: [{ username: usernameOrEmail }, { email: usernameOrEmail }] });
         if (!user)
             throw new Error("Incorrect username/email!");
@@ -38,6 +39,10 @@ export class UserService {
 
         const token = sign({ userId: user.id }, "AD39806740E1EF00AFF9B22D7379DF9C", { expiresIn: "1h" })
 
-        return token;
+        return {
+            username: user.username,
+            email: user.email,
+            token: token,
+        };
     }
 }

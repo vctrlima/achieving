@@ -11,12 +11,12 @@
             (ngSubmit)="submitLoginForm()"
         >
             <nz-form-item>
-                <nz-form-control nzErrorTip="Please input your username!">
+                <nz-form-control nzErrorTip="Please input your username/email!">
                     <nz-input-group nzPrefixIcon="user">
                         <input
                             type="text"
                             nz-input
-                            formControlName="username"
+                            formControlName="usernameOrEmail"
                             placeholder="Username"
                         />
                     </nz-input-group>

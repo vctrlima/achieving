@@ -1,5 +1,6 @@
 import * as bodyParser from "body-parser"
 import * as express from "express"
+import * as cors from "cors"
 import { Request, Response } from "express"
 import { AppDataSource } from "./data-source"
 import { Routes } from "./routes"
@@ -20,6 +21,10 @@ AppDataSource.initialize().then(async () => {
                 res.json(result);
         })
     })
+
+    app.use(cors({
+        origin: "*",
+    }));
 
     app.listen(4201);
 
