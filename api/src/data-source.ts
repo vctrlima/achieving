@@ -5,10 +5,10 @@ import { User } from "./entity/User";
 export const AppDataSource = new DataSource({
     type: "mysql",
     host: "localhost",
-    port: 3306,
+    port: 6603,
 
     username: "root",
-    password: "8/n&d*NHKypf!8zG",
+    password: "TO%Krp%UtVqE",
     database: "achieving",
 
     synchronize: true,
