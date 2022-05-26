@@ -1,47 +1,47 @@
 ang-signup {
-    .content {
-        @apply relative;
+  .content {
+    @apply relative;
 
-        ang-back-button {
-            .back-button {
-                @apply absolute
-                    left-6
-                    top-6;
-            }
-        }
-
-        @apply flex
-            justify-center
-            items-center
-            h-screen;
-
-        &__container {
-            @apply w-full max-w-xs;
-
-            &__title {
-                @apply text-5xl
-                    font-bold
-                    text-center
-                    mb-8;
-            }
-
-            &__form {
-                &__margin {
-                    @apply mb-6;
-                }
-
-                &__terms {
-                    @apply flex;
-
-                    .ant-checkbox + span {
-                        @apply pr-1;
-                    }
-                }
-
-                &__button {
-                    @apply w-full;
-                }
-            }
-        }
+    ang-back-button {
+      .back-button {
+        @apply absolute
+          left-6
+          top-6;
+      }
     }
+
+    @apply flex
+      justify-center
+      items-center
+      h-screen;
+
+    &__container {
+      @apply w-full max-w-xs;
+
+      &__title {
+        @apply text-5xl
+          font-bold
+          text-center
+          mb-8;
+      }
+
+      &__form {
+        &__margin {
+          @apply mb-6;
+        }
+
+        &__terms {
+          @apply flex;
+
+          .ant-checkbox + span {
+            @apply pr-1;
+          }
+        }
+
+        &__button {
+          @apply w-full;
+        }
+      }
+    }
+  }
 }

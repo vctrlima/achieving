@@ -6,36 +6,36 @@ import { AppState } from '@state/app.reducer';
 import * as fromAppActions from '@state/app.actions'
 
 @Component({
-    selector: 'ang-signup',
-    templateUrl: './signup.component.html',
-    styleUrls: ['./signup.component.scss'],
-    encapsulation: ViewEncapsulation.None,
+  selector: 'ang-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class SignupComponent implements OnInit {
 
-    public signupForm!: FormGroup;
+  public signupForm!: FormGroup;
 
-    constructor(
-        private store: Store<AppState>,
-        private formBuilder: FormBuilder,
-    ) { }
+  constructor(
+    private store: Store<AppState>,
+    private formBuilder: FormBuilder,
+  ) { }
 
-    public ngOnInit(): void {
-        this.signupForm = this.formBuilder.group({
-            username: [null, [Validators.required]],
-            email: [null, [Validators.required]],
-            password: [null, [Validators.required]],
-            confirmPassword: [null, [Validators.required]],
-            agreeWithTerms: [false]
-        });
-    }
+  public ngOnInit(): void {
+    this.signupForm = this.formBuilder.group({
+      username: [null, [Validators.required]],
+      email: [null, [Validators.required]],
+      password: [null, [Validators.required]],
+      confirmPassword: [null, [Validators.required]],
+      agreeWithTerms: [false]
+    });
+  }
 
-    public submitLoginForm(): void {
-        console.log('submitLoginForm');
+  public submitLoginForm(): void {
+    console.log('submitLoginForm');
 
-        // this.store.dispatch(fromAppActions.doLogin({
-        //     usernameOrEmail: this.signupForm.value.username,
-        //     password: this.signupForm.value.password,
-        // }));
-    }
+    // this.store.dispatch(fromAppActions.doLogin({
+    //     usernameOrEmail: this.signupForm.value.username,
+    //     password: this.signupForm.value.password,
+    // }));
+  }
 }

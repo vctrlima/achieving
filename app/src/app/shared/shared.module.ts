@@ -7,18 +7,18 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 
 @NgModule({
-    declarations: [
-        BackButtonComponent,
-    ],
-    imports: [
-        CommonModule,
-        RouterModule,
+  declarations: [
+    BackButtonComponent,
+  ],
+  imports: [
+    CommonModule,
+    RouterModule,
 
-        NzIconModule,
+    NzIconModule,
 
-    ],
-    exports: [
-        BackButtonComponent,
-    ]
+  ],
+  exports: [
+    BackButtonComponent,
+  ]
 })
 export class SharedModule { }

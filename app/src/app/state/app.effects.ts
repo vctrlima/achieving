@@ -8,25 +8,25 @@ import { UserService } from "@services/user.service";
 
 @Injectable()
 export class AppEffects {
-    constructor(
-        private actions$: Actions,
-        private userService: UserService,
-    ) { }
+  constructor(
+    private actions$: Actions,
+    private userService: UserService,
+  ) { }
 
-    public doLogin$ = createEffect(() => this.actions$.pipe(
-        ofType(fromAppActions.doLogin),
+  public doLogin$ = createEffect(() => this.actions$.pipe(
+    ofType(fromAppActions.doLogin),
 
-        mergeMap(({ usernameOrEmail: username, password }) => this.userService.signIn(username, password)
-            .pipe(
-                map((user: User) => {
-                    console.log("doLogin$");
-                    console.log(user);
+    mergeMap(({ usernameOrEmail: username, password }) => this.userService.signIn(username, password)
+      .pipe(
+        map((user: User) => {
+          console.log("doLogin$");
+          console.log(user);
 
-                    return fromAppActions.doLoginSuccess({ user });
-                }),
+          return fromAppActions.doLoginSuccess({ user });
+        }),
 
-                catchError(() => of(fromAppActions.doLoginFailure())),
-            )
-        )
-    ));
+        catchError(() => of(fromAppActions.doLoginFailure())),
+      )
+    )
+  ));
 }

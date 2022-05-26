@@ -25,24 +25,24 @@ import { reducer } from './state/app.reducer';
 registerLocaleData(pt);
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
 
-        AuthenticationModule,
+    AuthenticationModule,
 
-        StoreModule.forRoot({ userContext: reducer }),
-        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-        EffectsModule.forRoot([AppEffects]),
-        StoreRouterConnectingModule.forRoot(),
-    ],
-    providers: [{ provide: NZ_I18N, useValue: pt_BR }],
-    bootstrap: [AppComponent]
+    StoreModule.forRoot({ userContext: reducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([AppEffects]),
+    StoreRouterConnectingModule.forRoot(),
+  ],
+  providers: [{ provide: NZ_I18N, useValue: pt_BR }],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

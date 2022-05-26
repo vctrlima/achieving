@@ -2,15 +2,15 @@ import { createAction, props } from "@ngrx/store";
 import { User } from "@models/user.model";
 
 export const doLogin = createAction(
-    '[Login] Do Login',
-    props<{ usernameOrEmail: string; password: string }>(),
+  '[Login] Do Login',
+  props<{ usernameOrEmail: string; password: string }>(),
 );
 
 export const doLoginSuccess = createAction(
-    '[Http Request] Do Login Success',
-    props<{ user: User }>(),
+  '[Http Request] Do Login Success',
+  props<{ user: User }>(),
 );
 
 export const doLoginFailure = createAction(
-    '[Http Request] Do Login Failure',
+  '[Http Request] Do Login Failure',
 );

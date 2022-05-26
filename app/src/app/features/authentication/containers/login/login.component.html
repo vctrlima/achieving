@@ -1,88 +1,87 @@
 <section class="content">
-    <div class="content__container">
-        <h1 class="content__container__title">
-            Login
-        </h1>
+  <div class="content__container">
+    <h1 class="content__container__title">Login</h1>
 
-        <form
-            nz-form
-            class="content__container__form"
-            [formGroup]="loginForm"
-            (ngSubmit)="submitLoginForm()"
-        >
-            <nz-form-item>
-                <nz-form-control nzErrorTip="Please input your username/email!">
-                    <nz-input-group nzPrefixIcon="user">
-                        <input
-                            type="text"
-                            nz-input
-                            formControlName="usernameOrEmail"
-                            placeholder="Username"
-                        />
-                    </nz-input-group>
-                </nz-form-control>
-            </nz-form-item>
+    <form
+      nz-form
+      class="content__container__form"
+      [formGroup]="loginForm"
+      (ngSubmit)="submitLoginForm()"
+    >
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your username/email!">
+          <nz-input-group nzPrefixIcon="user">
+            <input
+              type="text"
+              nz-input
+              formControlName="usernameOrEmail"
+              placeholder="Username"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
 
-            <nz-form-item>
-                <nz-form-control nzErrorTip="Please input your password!">
-                    <nz-input-group nzPrefixIcon="lock">
-                        <input
-                            type="password"
-                            nz-input
-                            formControlName="password"
-                            placeholder="Password"
-                        />
-                    </nz-input-group>
-                </nz-form-control>
-            </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your password!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input
+              type="password"
+              nz-input
+              formControlName="password"
+              placeholder="Password"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
 
-            <div nz-row class="content__container__form__margin">
-                <div nz-col [nzSpan]="12">
-                    <label nz-checkbox formControlName="remember">
-                        <span>Remember me</span>
-                    </label>
-                </div>
+      <div nz-row class="content__container__form__margin">
+        <div nz-col [nzSpan]="12">
+          <label nz-checkbox formControlName="remember">
+            <span>Remember me</span>
+          </label>
+        </div>
 
-                <div nz-col [nzSpan]="12">
-                    <a class="content__container__form__forgot">Forgot password</a>
-                </div>
-            </div>
+        <div nz-col [nzSpan]="12">
+          <a class="content__container__form__forgot">Forgot password</a>
+        </div>
+      </div>
 
-            <button
-                nz-button
-                class="content__container__form__button content__container__form__margin"
-                [nzType]="'primary'"
-            >
-                Sign in
-            </button>
+      <button
+        nz-button
+        class="content__container__form__button content__container__form__margin"
+        [nzType]="'primary'"
+      >
+        Sign in
+      </button>
 
-            <nz-divider nzText="Or continue with"></nz-divider>
+      <nz-divider nzText="Or continue with"></nz-divider>
 
-            <button
-                #loginWithGoogleBtn
-                type="button"
-                class="content__container__form__button__google content__container__form__margin"
-            >
-                <i
-                    nz-icon
-                    nzType="google"
-                    nzTheme="outline"
-                    class="content__container__form__button__google__icon"
-                ></i>
+      <button
+        #loginWithGoogleBtn
+        type="button"
+        class="content__container__form__button__google content__container__form__margin"
+      >
+        <i
+          nz-icon
+          nzType="google"
+          nzTheme="outline"
+          class="content__container__form__button__google__icon"
+        ></i>
 
-                Sign in with <strong class="content__container__form__button__strong">Google</strong>
-            </button>
-        </form>
+        Sign in with
+        <strong class="content__container__form__button__strong">Google</strong>
+      </button>
+    </form>
 
-        <footer class="content__container__footer">
-            Don't have an account?
+    <footer class="content__container__footer">
+      Don't have an account?
 
-            <a
-                [routerLink]="['/auth/signup']"
-                class="content__container__footer__link"
-            >
-                Sign up now!
-            </a>
-        </footer>
-    </div>
+      <a
+        [routerLink]="['/auth/signup']"
+        class="content__container__footer__link"
+      >
+        Sign up now!
+      </a>
+    </footer>
+  </div>
 </section>

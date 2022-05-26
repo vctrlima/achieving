@@ -18,27 +18,27 @@ import { SignupComponent } from './containers/signup/signup.component';
 import { UserService } from '@services/user.service';
 
 @NgModule({
-    declarations: [
-        LoginComponent,
-        SignupComponent
-    ],
-    imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        AuthenticationRoutingModule,
+  declarations: [
+    LoginComponent,
+    SignupComponent
+  ],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    AuthenticationRoutingModule,
 
-        SharedModule,
+    SharedModule,
 
-        NzButtonModule,
-        NzCheckboxModule,
-        NzDividerModule,
-        NzFormModule,
-        NzIconModule,
-        NzInputModule,
-    ],
-    providers: [
-        UserService,
-    ],
+    NzButtonModule,
+    NzCheckboxModule,
+    NzDividerModule,
+    NzFormModule,
+    NzIconModule,
+    NzInputModule,
+  ],
+  providers: [
+    UserService,
+  ],
 })
 
 export class AuthenticationModule { }

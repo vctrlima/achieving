@@ -6,85 +6,85 @@ import { AppState } from 'src/app/state/app.reducer';
 
 
 @Component({
-    selector: 'ang-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss'],
-    encapsulation: ViewEncapsulation.None,
+  selector: 'ang-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class LoginComponent implements OnInit {
-    @ViewChild('loginWithGoogleBtn', { static: true }) loginWithGoogleBtn!: ElementRef;
+  @ViewChild('loginWithGoogleBtn', { static: true }) loginWithGoogleBtn!: ElementRef;
 
-    public loginForm!: FormGroup;
+  public loginForm!: FormGroup;
 
-    auth2: any;
+  auth2: any;
 
-    constructor(
-        private store: Store<AppState>,
-        private formBuilder: FormBuilder,
-    ) { }
+  constructor(
+    private store: Store<AppState>,
+    private formBuilder: FormBuilder,
+  ) { }
 
-    public ngOnInit(): void {
-        this.googleAuthenticationSdk();
+  public ngOnInit(): void {
+    this.googleAuthenticationSdk();
 
-        this.loginForm = this.formBuilder.group({
-            usernameOrEmail: [null, [Validators.required]],
-            password: [null, [Validators.required]],
-            remember: [true]
+    this.loginForm = this.formBuilder.group({
+      usernameOrEmail: [null, [Validators.required]],
+      password: [null, [Validators.required]],
+      remember: [true]
+    });
+  }
+
+  public submitLoginForm(): void {
+    console.log('submitLoginForm');
+
+    this.store.dispatch(fromAppActions.doLogin({
+      usernameOrEmail: this.loginForm.value.usernameOrEmail,
+      password: this.loginForm.value.password,
+    }));
+  }
+
+  private googleAuthenticationSdk(): void {
+    (<any>window)['googleSDKLoaded'] = () => {
+      (<any>window)['gapi'].load('auth2', () => {
+        this.auth2 = (<any>window)['gapi'].auth2.init({
+          client_id: 'YOUR CLIENT ID HERE',
+          cookiepolicy: 'single_host_origin',
+          scope: 'profile email'
         });
+
+        this.loginWithGoogle();
+      });
     }
 
-    public submitLoginForm(): void {
-        console.log('submitLoginForm');
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
 
-        this.store.dispatch(fromAppActions.doLogin({
-            usernameOrEmail: this.loginForm.value.usernameOrEmail,
-            password: this.loginForm.value.password,
-        }));
-    }
+      if (d.getElementById(id))
+        return;
 
-    private googleAuthenticationSdk(): void {
-        (<any>window)['googleSDKLoaded'] = () => {
-            (<any>window)['gapi'].load('auth2', () => {
-                this.auth2 = (<any>window)['gapi'].auth2.init({
-                    client_id: 'YOUR CLIENT ID HERE',
-                    cookiepolicy: 'single_host_origin',
-                    scope: 'profile email'
-                });
+      js = d.createElement('script');
+      js.id = id;
+      js.src = "https://apis.google.com/js/platform.js?onload=googleSDKLoaded";
 
-                this.loginWithGoogle();
-            });
-        }
+      fjs?.parentNode?.insertBefore(js, fjs);
+    }(document, 'script', 'google-jssdk'));
+  }
 
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
+  private loginWithGoogle(): void {
+    this.auth2.attachClickHandler(this.loginWithGoogleBtn.nativeElement, {},
+      (googleAuthUser: any) => {
 
-            if (d.getElementById(id))
-                return;
+        let profile = googleAuthUser.getBasicProfile();
 
-            js = d.createElement('script');
-            js.id = id;
-            js.src = "https://apis.google.com/js/platform.js?onload=googleSDKLoaded";
+        console.log('Token || ' + googleAuthUser.getAuthResponse().id_token);
+        console.log('ID: ' + profile.getId());
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
 
-            fjs?.parentNode?.insertBefore(js, fjs);
-        }(document, 'script', 'google-jssdk'));
-    }
+        /* Write Your Code Here */
 
-    private loginWithGoogle(): void {
-        this.auth2.attachClickHandler(this.loginWithGoogleBtn.nativeElement, {},
-            (googleAuthUser: any) => {
-
-                let profile = googleAuthUser.getBasicProfile();
-
-                console.log('Token || ' + googleAuthUser.getAuthResponse().id_token);
-                console.log('ID: ' + profile.getId());
-                console.log('Name: ' + profile.getName());
-                console.log('Image URL: ' + profile.getImageUrl());
-                console.log('Email: ' + profile.getEmail());
-
-                /* Write Your Code Here */
-
-            }, (error: any) => {
-                alert(JSON.stringify(error, undefined, 2));
-            });
-    }
+      }, (error: any) => {
+        alert(JSON.stringify(error, undefined, 2));
+      });
+  }
 }

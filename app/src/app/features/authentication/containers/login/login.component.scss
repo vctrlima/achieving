@@ -1,73 +1,73 @@
 $default-transition-properties: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 
 ang-login {
-    .content {
-        @apply flex
-            justify-center
-            items-center
-            h-screen;
+  .content {
+    @apply flex
+      justify-center
+      items-center
+      h-screen;
 
-        &__container {
-            @apply w-full max-w-xs;
+    &__container {
+      @apply w-full max-w-xs;
 
-            &__title {
-                @apply text-5xl
-                    font-bold
-                    text-center
-                    mb-8;
-            }
+      &__title {
+        @apply text-5xl
+          font-bold
+          text-center
+          mb-8;
+      }
 
-            &__form {
-                &__margin {
-                    @apply mb-6;
-                }
-
-                &__forgot {
-                    @apply float-right
-                        text-primary;
-                }
-
-                &__button {
-                    @apply w-full;
-
-                    &__google {
-                        @apply h-11
-                            border-2
-                            border-gray-tundora
-                            rounded-md
-                            block
-                            w-full
-                            relative
-                            hover:border-primary
-                            focus:shadow-focus;
-
-                        transition: $default-transition-properties;
-
-                        &__icon {
-                            @apply absolute
-                                left-16
-                                top-[13px];
-                        }
-                    }
-
-                    &__strong {
-                        @apply font-semibold;
-                    }
-                }
-            }
-
-            &__footer {
-                @apply mt-12
-                    text-center;
-
-                &__link {
-                    @apply text-primary
-                        font-semibold
-                        hover:opacity-75;
-
-                    transition: $default-transition-properties;
-                }
-            }
+      &__form {
+        &__margin {
+          @apply mb-6;
         }
+
+        &__forgot {
+          @apply float-right
+            text-primary;
+        }
+
+        &__button {
+          @apply w-full;
+
+          &__google {
+            @apply h-11
+              border-2
+              border-gray-tundora
+              rounded-md
+              block
+              w-full
+              relative
+              hover:border-primary
+              focus:shadow-focus;
+
+            transition: $default-transition-properties;
+
+            &__icon {
+              @apply absolute
+                left-16
+                top-[13px];
+            }
+          }
+
+          &__strong {
+            @apply font-semibold;
+          }
+        }
+      }
+
+      &__footer {
+        @apply mt-12
+          text-center;
+
+        &__link {
+          @apply text-primary
+            font-semibold
+            hover:opacity-75;
+
+          transition: $default-transition-properties;
+        }
+      }
     }
+  }
 }
