@@ -1,16 +1,16 @@
 import { Injectable } from "@angular/core";
+import { User } from "@models/user.model";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, map, mergeMap, of } from "rxjs";
-import { User } from "@models/user.model";
 
+import { AuthenticationService } from "@services/authentication.service";
 import * as fromAppActions from './app.actions';
-import { UserService } from "@services/user.service";
 
 @Injectable()
 export class AppEffects {
   constructor(
     private actions$: Actions,
-    private userService: UserService,
+    private userService: AuthenticationService,
   ) { }
 
   public doLogin$ = createEffect(() => this.actions$.pipe(
