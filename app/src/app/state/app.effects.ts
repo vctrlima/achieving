@@ -5,12 +5,14 @@ import { catchError, map, mergeMap, of } from "rxjs";
 
 import { AuthenticationService } from "@services/authentication.service";
 import * as fromAppActions from './app.actions';
+import { Router } from "@angular/router";
 
 @Injectable()
 export class AppEffects {
   constructor(
     private actions$: Actions,
     private userService: AuthenticationService,
+    private router: Router,
   ) { }
 
   public doLogin$ = createEffect(() => this.actions$.pipe(
@@ -19,8 +21,7 @@ export class AppEffects {
     mergeMap(({ usernameOrEmail: username, password }) => this.userService.signIn(username, password)
       .pipe(
         map((user: User) => {
-          console.log("doLogin$");
-          console.log(user);
+          this.router.navigate(['/']);
 
           return fromAppActions.doLoginSuccess({ user });
         }),

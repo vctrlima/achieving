@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from '@models/user.model';
 import { Store } from '@ngrx/store';
 import { AuthenticationService } from '@services/authentication.service';
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private store: Store<AppState>,
     private formBuilder: FormBuilder,
     private authenticationService: AuthenticationService,
+    private router: Router,
   ) {
     this.authSubscription = new Subscription();
   }
@@ -44,7 +46,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     (<any>window)['googleSDKLoaded'] = () => {
       (<any>window)['gapi'].load('auth2', () => {
         this.auth2 = (<any>window)['gapi'].auth2.init({
-          client_id: 'YOUR CLIENT ID HERE',
+          client_id: '349968458049-9eqvspjgv230i6kpj915jugfbvadehct.apps.googleusercontent.com',
           cookiepolicy: 'single_host_origin',
           scope: 'profile email'
         });
@@ -80,6 +82,8 @@ export class LoginComponent implements OnInit, OnDestroy {
         };
 
         this.authenticationService.googleSignIn(user);
+
+        this.router.navigate(['/']);
 
       }, (error: any) => {
         alert(JSON.stringify(error, undefined, 2));

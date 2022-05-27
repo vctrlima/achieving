@@ -12,8 +12,8 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { SharedModule } from '@shared/shared.module';
 
 import { AuthenticationRoutingModule } from './authentication.routing';
-import { LoginComponent } from './containers/login/login.component';
-import { SignupComponent } from './containers/signup/signup.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 import { AuthenticationService } from '@services/authentication.service';
 
