@@ -8,38 +8,39 @@ import { Observable } from 'rxjs';
 export class AuthenticationGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
   constructor(
     private router: Router,
-  ) {
-
-  }
+  ) { }
 
   public canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.isAuthenticated()) {
+
+    if (this.isAuthenticated())
       return true;
-    }
 
     this.router.navigate(['/auth']);
     return false;
   }
+
   public canActivateChild(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.isAuthenticated()) {
+
+    if (this.isAuthenticated())
       return true;
-    }
 
     this.router.navigate(['/auth']);
     return false;
   }
+
   public canDeactivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.isAuthenticated()) {
+
+    if (this.isAuthenticated())
       return true;
-    }
 
     this.router.navigate(['/auth']);
     return false;
   }
+
   public canLoad(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.isAuthenticated()) {
+
+    if (this.isAuthenticated())
       return true;
-    }
 
     this.router.navigate(['/auth']);
     return false;

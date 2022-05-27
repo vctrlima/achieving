@@ -11,7 +11,9 @@ module.exports = {
 
       colors: {
         gray: {
-          tundora: '#434343',
+          primary: '#0D0D0D',
+          secondary: '#161616',
+          tertiary: '#434343',
         },
 
         green: {

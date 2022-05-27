@@ -1,0 +1,54 @@
+ang-menu {
+  .header {
+    @apply flex
+      justify-between
+      items-center
+      px-5
+      py-3
+      bg-gray-primary;
+
+    &__btn-expand,
+    &__btn-search {
+      @apply flex
+        justify-center
+        items-center
+        h-10
+        w-10
+        pb-0.5
+        rounded-full
+        bg-transparent
+        border-2
+        border-solid
+        border-transparent
+        transition-all
+        duration-300
+        ease-in-out;
+
+      &:hover {
+        @apply bg-gray-primary
+          text-primary;
+      }
+
+      &:focus {
+        @apply bg-gray-primary
+          border-primary
+          shadow-focus;
+      }
+
+      &__icon {
+        @apply text-white
+          text-base;
+      }
+    }
+  }
+
+  .navigation-menu {
+    @apply bg-gray-secondary
+      fixed
+      top-0
+      left-0
+      h-screen
+      w-28
+      hidden;
+  }
+}

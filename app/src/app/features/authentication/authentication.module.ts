@@ -11,11 +11,11 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 
 import { SharedModule } from '@shared/shared.module';
 
+import { AuthenticationService } from '@services/authentication.service';
+
 import { AuthenticationRoutingModule } from './authentication.routing';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
-
-import { AuthenticationService } from '@services/authentication.service';
 
 @NgModule({
   declarations: [

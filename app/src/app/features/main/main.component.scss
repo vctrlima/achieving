@@ -1,0 +1,18 @@
+ang-main {
+  > ang-menu {
+    > .header {
+      @apply fixed
+        top-0
+        left-0
+        w-screen;
+    }
+  }
+
+  .content {
+    @apply pt-10;
+
+    // &__container {
+    //   @apply pt-10;
+    // }
+  }
+}

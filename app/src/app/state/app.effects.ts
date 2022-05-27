@@ -3,9 +3,9 @@ import { User } from "@models/user.model";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, map, mergeMap, of } from "rxjs";
 
+import { Router } from "@angular/router";
 import { AuthenticationService } from "@services/authentication.service";
 import * as fromAppActions from './app.actions';
-import { Router } from "@angular/router";
 
 @Injectable()
 export class AppEffects {

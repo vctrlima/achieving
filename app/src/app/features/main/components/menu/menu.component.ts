@@ -1,12 +1,12 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'ang-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss'],
+  selector: 'ang-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class MainComponent {
+export class MenuComponent {
 
   constructor() { }
 }
