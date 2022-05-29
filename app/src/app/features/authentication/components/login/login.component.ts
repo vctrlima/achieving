@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     (<any>window)['googleSDKLoaded'] = () => {
       (<any>window)['gapi'].load('auth2', () => {
         this.auth2 = (<any>window)['gapi'].auth2.init({
-          client_id: '349968458049-9eqvspjgv230i6kpj915jugfbvadehct.apps.googleusercontent.com',
+          client_id: 'YOUR CLIENT ID HERE',
           cookiepolicy: 'single_host_origin',
           scope: 'profile email'
         });
